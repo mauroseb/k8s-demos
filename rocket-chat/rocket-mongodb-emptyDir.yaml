@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -65,4 +64,4 @@ spec:
     - name: mongodb
       port: 27017
   selector:
-    app: "mongodb
+    app: "mongodb"
