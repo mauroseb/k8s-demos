@@ -1,0 +1,68 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mongodb
+  name: mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mongodb
+    spec:
+      containers:
+      - name: mongo-container
+        image: "registry.access.redhat.com/rhscl/mongodb-34-rhel7:latest"
+        ports:
+          - containerPort: 27017
+        volumeMounts:
+          - name: mongo-data
+            mountPath: "/var/lib/mongodb/data"
+        env:
+          - name: MONGODB_DATABASE
+            value: "mongodb"
+          - name: MONGODB_USER
+            value: "mongodb_user"
+          - name: MONGODB_PASSWORD
+            value: "mongodb_password"
+          - name: MONGODB_ADMIN_PASSWORD
+            value: "mongodb_admin_password"
+      volumes:
+        - name: mongo-data
+          emptyDir: {}
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: "mongodb-internal"
+  labels:
+    name: "mongodb"
+  annotations:
+    service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
+spec:
+  clusterIP: None
+  ports:
+    - name: mongodb
+      port: 27017
+  selector:
+    app: "mongodb"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: "mongodb"
+  labels:
+    name: "mongodb"
+spec:
+  ports:
+    - name: mongodb
+      port: 27017
+  selector:
+    app: "mongodb
