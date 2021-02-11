@@ -14,6 +14,10 @@ spec:
     metadata:
       labels:
         app: adservice
+        app.kubernetes.io/name: adservice
+        app.kubernetes.io/version: 0.1
+        app.kubernetes.io/component: adservice
+        app.kubernetes.io/part-of: online-boutique
     spec:
       terminationGracePeriodSeconds: 5
       containers:
