@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: currencyservice
+  labels:
+    app: currencyservice
+    app.kubernetes.io/name: currencyservice
+    app.kubernetes.io/version: 0.1
+    app.kubernetes.io/component: currencyservice
+    app.kubernetes.io/part-of: online-boutique
+  namespace: online-boutique
+spec:
+  type: ClusterIP
+  selector:
+    app: currencyservice
+  ports:
+  - name: grpc
+    port: 7000
+    targetPort: 7000
