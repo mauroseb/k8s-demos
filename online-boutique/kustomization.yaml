@@ -1,0 +1,24 @@
+resources:
+- ./kubernetes/01-namespace.yaml
+- ./kubernetes/02-adservice-deployment.yaml
+- ./kubernetes/03-adservice-service.yaml
+- ./kubernetes/04-cartservice-deployment.yaml
+- ./kubernetes/05-cartservice-service.yaml
+- ./kubernetes/06-checkoutservice-deployment.yaml
+- ./kubernetes/07-checkoutservice-service.yaml
+- ./kubernetes/08-currencyservice-deployment.yaml
+- ./kubernetes/09-currencyservice-service.yaml
+- ./kubernetes/10-emailservice-deployment.yaml
+- ./kubernetes/11-emailservice-service.yaml
+- ./kubernetes/12-frontend-deployment.yaml
+- ./kubernetes/13-frontend-service.yaml
+- ./kubernetes/14-paymentservice-deployment.yaml
+- ./kubernetes/15-paymentservice-service
+- ./kubernetes/16-productcatalogservice-deployment.yaml
+- ./kubernetes/17-productcatalogservice-service.yaml
+- ./kubernetes/18-recommendationservice-deployment.yaml
+- ./kubernetes/19-recommendationservice-service.yaml
+- ./kubernetes/20-redis-cart-deployment.yaml
+- ./kubernetes/21-redis-cart-service.yaml
+- ./kubernetes/22-shippingservice-deployment.yaml
+- ./kubernetes/23-shippingservice-service.yaml
