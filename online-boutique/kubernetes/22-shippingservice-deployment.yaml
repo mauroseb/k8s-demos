@@ -15,7 +15,7 @@ spec:
       labels:
         app: shippingservice
         app.kubernetes.io/name: shippingservice
-        app.kubernetes.io/version: 0.1
+        app.kubernetes.io/version: "0.1"
         app.kubernetes.io/component: shippingservice
         app.kubernetes.io/part-of: online-boutique
     spec:
