@@ -15,7 +15,7 @@ spec:
       labels:
         app: redis-cart
         app.kubernetes.io/name: redis-cart
-        app.kubernetes.io/version: 0.1
+        app.kubernetes.io/version: "0.1"
         app.kubernetes.io/component: redis-cart
         app.kubernetes.io/part-of: online-boutique
     spec:
