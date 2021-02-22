@@ -22,3 +22,4 @@ resources:
 - ./kubernetes/21-redis-cart-service.yaml
 - ./kubernetes/22-shippingservice-deployment.yaml
 - ./kubernetes/23-shippingservice-service.yaml
+- ./kubernetes/24-frontend-route.yaml
