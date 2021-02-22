@@ -16,7 +16,7 @@ spec:
       labels:
         app: recommendationservice
         app.kubernetes.io/name: recommendationservice
-        app.kubernetes.io/version: 0.1
+        app.kubernetes.io/version: "0.1"
         app.kubernetes.io/component: recommendationservice
         app.kubernetes.io/part-of: online-boutique
     spec:
