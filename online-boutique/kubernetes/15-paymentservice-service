@@ -6,7 +6,7 @@ metadata:
   labels:
     app: paymentservice
     app.kubernetes.io/name: paymentservice
-    app.kubernetes.io/version: 0.1
+    app.kubernetes.io/version: "0.1"
     app.kubernetes.io/component: paymentservice
     app.kubernetes.io/part-of: online-boutique
   namespace: online-boutique
