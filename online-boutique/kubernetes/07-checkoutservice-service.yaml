@@ -6,7 +6,7 @@ metadata:
   labels:
     app: checkoutservice
     app.kubernetes.io/name: checkoutservice
-    app.kubernetes.io/version: 0.1
+    app.kubernetes.io/version: "0.1"
     app.kubernetes.io/component: checkoutservice
     app.kubernetes.io/part-of: online-boutique
   namespace: online-boutique
