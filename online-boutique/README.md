@@ -1,4 +1,4 @@
-Google's Online Boutique Microservices Demo adapted Kustomize and for a proxied env with quay.io access only.
+Google's Online Boutique Microservices Demo adapted for Kustomize and for a proxied env with quay.io access only.
 ~~~
 # kubectl apply -k .
 ~~~
