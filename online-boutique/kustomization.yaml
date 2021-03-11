@@ -1,3 +1,5 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
 resources:
 - ./kubernetes/01-namespace.yaml
 - ./kubernetes/02-adservice-deployment.yaml
