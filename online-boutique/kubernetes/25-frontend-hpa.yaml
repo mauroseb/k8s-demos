@@ -18,3 +18,19 @@ spec:
       target:
         type: AverageValue
         averageValue: 300m
+  behavior:
+    scaleDown: 
+      policies: 
+      - type: Pods 
+        value: 1
+        periodSeconds: 60 
+      selectPolicy: Min 
+      stabilizationWindowSeconds: 300 
+    scaleUp: 
+      policies:
+      - type: Pods
+        value: 1 
+        periodSeconds: 60
+      selectPolicy: Max
+      stabilizationWindowSeconds: 0
+
