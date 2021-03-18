@@ -60,18 +60,6 @@ spec:
             value: "checkoutservice:5050"
           - name: AD_SERVICE_ADDR
             value: "adservice:9555"
-          affinity:
-            podAntiAffinity: 
-              requiredDuringSchedulingIgnoredDuringExecution: 
-              - weight: 100  
-                podAffinityTerm:
-                  labelSelector:
-                    matchExpressions:
-                    - key: app 
-                      operator: In 
-                      values:
-                      - frontend
-                  topologyKey: kubernetes.io/hostname
           resources:
             requests:
               cpu: 100m
@@ -79,3 +67,16 @@ spec:
             limits:
               cpu: 200m
               memory: 128Mi
+      affinity:
+        podAntiAffinity: 
+          requiredDuringSchedulingIgnoredDuringExecution: 
+          - weight: 100  
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app 
+                  operator: In 
+                  values:
+                  - frontend
+              topologyKey: kubernetes.io/hostname
+              
