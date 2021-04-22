@@ -26,4 +26,6 @@ deployment.apps/productcatalogservice created
 deployment.apps/recommendationservice created
 deployment.apps/redis-cart created
 deployment.apps/shippingservice created
+horizontalpodautoscaler.autoscaling/frontend-hpa created
+route.route.openshift.io/frontend created
 ~~~
