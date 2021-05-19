@@ -1,0 +1,39 @@
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    build: spring-petclinic
+  name: spring-petclinic
+  namespace: petclinic
+spec:
+  failedBuildsHistoryLimit: 3
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: spring-petclinic:latest
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      uri: https://github.com/spring-projects/spring-petclinic.git
+    type: Git
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: java:8
+        namespace: openshift
+    type: Source
+  successfulBuildsHistoryLimit: 3
+  triggers:
+  - github:
+      secret: euKF2KkBS5ODN3eL3kNM
+    type: GitHub
+  - generic:
+      secret: UrNvXz7V_hjig0giXv8c
+    type: Generic
+  - type: ConfigChange
+  - type: ImageChange
