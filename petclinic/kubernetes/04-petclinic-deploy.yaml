@@ -18,7 +18,7 @@ metadata:
             "kind": "ImageStringTag",
             "name": "spring-petclinic:latest"
           },
-          "fieldPath": "spec.template.spec.containers[0].image"
+          "fieldPath": "spec.template.spec.containers[?(@.name='spring-petclinic')].image"
         }
       ]
 spec:
