@@ -6,4 +6,4 @@ metadata:
   namespace: petclinic
 spec:
   lookupPolicy:
-    local: false
+    local: true
