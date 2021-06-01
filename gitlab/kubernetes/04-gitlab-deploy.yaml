@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"gitlab:8.4.3-ce.0"},"fieldPath":"spec.template.spec.containers[?(@.name==\"gitlab\")].image"}]'
+  labels:
+    app: gitlab
+    app.kubernetes.io/component: gitlab
+    app.kubernetes.io/instance: gitlab
+  name: gitlab
+  namespace: gitlab
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      deployment: gitlab
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        deployment: gitlab
+    spec:
+      containers:
+      - image: gitlab/gitlab-ce@sha256:6e2db09cc6ba5d18ba0e3387722300da78cce68dbc8a758a4b3afa65b55d38ae
+        imagePullPolicy: IfNotPresent
+        name: gitlab
+        ports:
+        - containerPort: 22
+          protocol: TCP
+        - containerPort: 443
+          protocol: TCP
+        - containerPort: 80
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /etc/gitlab
+          name: gitlab-volume-1
+        - mountPath: /var/log/gitlab
+          name: gitlab-volume-2
+        - mountPath: /var/opt/gitlab
+          name: gitlab-volume-3
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      serviceAccount: gitlab-sa
+      serviceAccountName: gitlab-sa
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - emptyDir: {}
+        name: gitlab-volume-1
+      - emptyDir: {}
+        name: gitlab-volume-2
+      - emptyDir: {}
+        name: gitlab-volume-3
