@@ -8,7 +8,7 @@ metadata:
   name: gitlab
   namespace: gitlab
 spec:
-  host: gitlab.apps.ocp4-bm.t1.lab.local
+  host: gitlab.public.lab.local
   port:
     targetPort: 80
   to:
