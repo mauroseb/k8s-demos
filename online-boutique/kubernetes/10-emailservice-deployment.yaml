@@ -5,7 +5,6 @@ metadata:
   name: emailservice
   labels:
     app: emailservice
-  namespace: online-boutique
 spec:
   selector:
     matchLabels:

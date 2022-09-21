@@ -6,7 +6,6 @@ metadata:
   name: recommendationservice
   labels:
     app: recommendationservice
-  namespace: online-boutique
 spec:
   selector:
     matchLabels:

@@ -8,7 +8,6 @@ metadata:
     app.kubernetes.io/part-of: online-boutique
     app.kubernetes.io/version: "0.1"
   name: frontend
-  namespace: online-boutique
 spec:
   host: online-boutique.apps.ocp4-bm.t1.lab.local
   port:

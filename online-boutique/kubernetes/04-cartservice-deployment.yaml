@@ -5,7 +5,6 @@ metadata:
   name: cartservice
   labels:
     app: cartservice
-  namespace: online-boutique
 spec:
   selector:
     matchLabels:

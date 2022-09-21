@@ -9,7 +9,6 @@ metadata:
     app.kubernetes.io/version: "0.1"
     app.kubernetes.io/component: cartservice
     app.kubernetes.io/part-of: online-boutique
-  namespace: online-boutique
 spec:
   type: ClusterIP
   selector:

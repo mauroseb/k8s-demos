@@ -5,7 +5,6 @@ metadata:
   name: redis-cart
   labels:
     app: redis-cart
-  namespace: online-boutique
 spec:
   selector:
     matchLabels:

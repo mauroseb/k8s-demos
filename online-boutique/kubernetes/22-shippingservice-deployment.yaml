@@ -5,7 +5,6 @@ metadata:
   name: shippingservice
   labels:
     app: shippingservice
-  namespace: online-boutique
 spec:
   selector:
     matchLabels:

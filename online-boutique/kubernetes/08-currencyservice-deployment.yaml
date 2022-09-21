@@ -5,7 +5,6 @@ metadata:
   name: currencyservice
   labels:
     app: currencyservice
-  namespace: online-boutique
 spec:
   selector:
     matchLabels:
