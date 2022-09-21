@@ -1,5 +1,5 @@
 ---
-apiVersion: autoscaling/v2beta2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: frontend-hpa
@@ -18,17 +18,17 @@ spec:
         type: AverageValue
         averageValue: 300m
   behavior:
-    scaleDown: 
-      policies: 
-      - type: Pods 
-        value: 1
-        periodSeconds: 60 
-      selectPolicy: Min 
-      stabilizationWindowSeconds: 300 
-    scaleUp: 
+    scaleDown:
       policies:
       - type: Pods
-        value: 1 
+        value: 1
+        periodSeconds: 60
+      selectPolicy: Min
+      stabilizationWindowSeconds: 300
+    scaleUp:
+      policies:
+      - type: Pods
+        value: 1
         periodSeconds: 60
       selectPolicy: Max
       stabilizationWindowSeconds: 0
