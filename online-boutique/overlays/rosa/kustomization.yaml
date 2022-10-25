@@ -1,0 +1,12 @@
+bases:
+  - ../../base
+
+patchesJson6902:
+- target:
+    version: v1
+    kind: Route
+    name: online-boutique
+  patch: |-
+    - op: replace
+      path: /spec/host
+      value: online-boutique.mauro.emetam.support
