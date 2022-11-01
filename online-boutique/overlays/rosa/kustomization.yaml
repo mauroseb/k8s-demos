@@ -5,8 +5,8 @@ patchesJson6902:
 - target:
     version: v1
     kind: Route
-    name: online-boutique
+    name: frontend
   patch: |-
     - op: replace
       path: /spec/host
-      value: online-boutique.mauro.emetam.support
+      value: online-boutique.mauro.emeatam.support
