@@ -19,6 +19,7 @@ spec:
         app.kubernetes.io/part-of: online-boutique
     spec:
       terminationGracePeriodSeconds: 5
+      serviceAccountName: online-boutique
       containers:
       - name: server
         image: quay.io/mauroseb/paymentservice:0.1
