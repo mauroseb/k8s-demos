@@ -7,8 +7,8 @@ commonAnnotations:
    cost-center: mauro
 resources:
 - ./kubernetes/01-namespace.yaml
-- ./kubernetes/02-adservice-deployment.yaml
-- ./kubernetes/03-adservice-service.yaml
+- ./kubernetes/02-sa.yaml
+- ./kubernetes/03-scc-rolebinding.yaml
 - ./kubernetes/04-cartservice-deployment.yaml
 - ./kubernetes/05-cartservice-service.yaml
 - ./kubernetes/06-checkoutservice-deployment.yaml
@@ -31,3 +31,5 @@ resources:
 - ./kubernetes/23-shippingservice-service.yaml
 - ./kubernetes/24-frontend-route.yaml
 - ./kubernetes/25-frontend-hpa.yaml
+- ./kubernetes/36-adservice-deployment.yaml
+- ./kubernetes/27-adservice-service.yaml
